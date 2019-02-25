@@ -1,0 +1,20 @@
+{
+	"geometry": {
+		"width":480,
+		"height":234
+	},
+	"gpio": {
+		"play": 1,
+		"next": 2,
+		"prev": 3,
+		"like": 4,
+		"remv": 5
+	},
+	"http": {
+		"host": "127.0.0.4",
+		"port": 8080,
+		"pswd": "guegueforever"
+	},
+	"music_dir": "E:\\Musique",
+	"vlc_path": "C:/Program Files/VideoLAN/VLC/vlc.exe"
+}
