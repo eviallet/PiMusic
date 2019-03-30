@@ -2,7 +2,7 @@
 #define GPIOWATCHER_H
 
 #include <QThread>
-#include "wiringpi.h"
+#include <wiringpi.h>
 
 
 class GPIOWatcher : public QThread {

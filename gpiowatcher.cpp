@@ -1,6 +1,6 @@
 #include "gpiowatcher.h"
 
-GPIOWatcher::GPIOWatcher(int pin, QObject *parent) : pin(pin), QThread(parent) {
+GPIOWatcher::GPIOWatcher(int pin, QObject *parent) : QThread(parent), pin(pin) {
     pinMode(pin, INPUT);
 }
 

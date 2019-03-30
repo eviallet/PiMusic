@@ -8,12 +8,12 @@ void XmlParser::parse(Track *track, QByteArray& xml) {
     track->setTitle(infoValue("title"));
     track->setArtist(infoValue("artist"));
     track->setPath(infoValue("filename"));
-    track->setYear(infoValue("date").toShort());
+    track->setYear(static_cast<unsigned short>(infoValue("date").toShort()));
 
 
-    track->setId(attributeValue("currentplid").toShort());
-    track->setDuration(attributeValue("length").toShort());
-    track->setTime(attributeValue("time").toShort());
+    track->setId(static_cast<unsigned short>(attributeValue("currentplid").toShort()));
+    track->setDuration(static_cast<unsigned short>(attributeValue("length").toShort()));
+    track->setTime(static_cast<unsigned short>(attributeValue("time").toShort()));
 
     if(track->title().length()>100)
         track->setTitle(track->path().left(track->path().length()-4)); // path without extension

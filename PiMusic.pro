@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network widgets
+QT       += core network widgets
 
 TARGET = PiMusic
 TEMPLATE = app
@@ -22,24 +22,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        playerwindow.cpp \
-        gpiowatcher.cpp \
-        mediaplayer.cpp \
+    main.cpp \
+    gpiowatcher.cpp \
+    mediaplayer.cpp \
     track.cpp \
-    xmlparser.cpp
+    xmlparser.cpp \
+    lcdscreen.cpp
 
 HEADERS += \
-        playerwindow.h \
-        gpiowatcher.h \
-        wiringpi.h \
-        mediaplayer.h \
+    gpiowatcher.h \
+    mediaplayer.h \
     track.h \
     xmlparser.h \
-    config.h
+    config.h \
+    lcdscreen.h
 
-FORMS += \
-        playerwindow.ui
+FORMS +=
+
+win32 {
+    SOURCES +=
+    HEADERS += \
+        wiringpi.h \
+        lcd.h
+} else {
+    LIBS += -L/usr/local/include -lwiringPi -lwiringPiDev -lpthread
+}
+
 
 RESOURCES += \
     res.qrc

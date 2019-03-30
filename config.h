@@ -37,7 +37,11 @@ public:
 
 private:
     Config() {
-        QFile file("C:\\Users\\jackb\\OneDrive\\Progra\\PiMusic\\config.json");
+    #ifdef  Q_OS_WIN
+        QFile file("C:\\Users\\Gueg\\OneDrive\\Progra\\PiMusic\\config.json");
+    #else //Q_OS_LINUX
+        QFile file("/home/pi/pimusic/config.json");
+    #endif
         if(file.open(QFile::ReadOnly)) {
             QByteArray str = file.readAll();
             file.close();

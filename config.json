@@ -1,8 +1,4 @@
 {
-	"geometry": {
-		"width":480,
-		"height":234
-	},
 	"gpio": {
 		"play": 1,
 		"next": 2,
